@@ -80,7 +80,7 @@ GAME.chgTxt = function( num ) {
 		}
 	}
 	len = GAME.txt.replace( /[.]/g, "" ).length
-	GAME.div.innerHTML = GAME.txt.substring( max( len - 10, 0 ) );
+	GAME.div.innerHTML = GAME.txt.substring( Math.max( len - 10, 0 ) );
 	GAME.spn1.innerHTML = len;
 	GAME.in.value = " ";
 };
