@@ -35,7 +35,7 @@ GAME.init = function() {
 	GAME.chgTxt( 4 );
 
 	GAME.in.type = "text";
-	GAME.in.size = "4";
+	GAME.in.size = "2";
 
 	GAME.btn.innerHTML = "Validate";
 
