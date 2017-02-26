@@ -79,9 +79,9 @@ GAME.chgTxt = function( num ) {
 			GAME.txt = GAME.txt.slice( 0, GAME.digits - len );
 		}
 	}
-
-	GAME.div.innerHTML = GAME.txt;
-	GAME.spn1.innerHTML = GAME.txt.replace( /[.]/g, "" ).length;;
+	len = GAME.txt.replace( /[.]/g, "" ).length
+	GAME.div.innerHTML = GAME.txt.substring( max( len - 10, 0 ) );
+	GAME.spn1.innerHTML = len;
 	GAME.in.value = " ";
 };
 
