@@ -12,7 +12,7 @@
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://github.com/i3wgnit/Pi-Learning-Tool/raw/master/pi-learning.user.js
-// @version     2.2
+// @version     2.2.1
 // ==/UserScript==
 var GAME = {};
 
@@ -163,7 +163,7 @@ GAME.vald = function() {
 	}
 };
 
-var time = Math.max(0, Date.now() - GM_getValue("twl@pi-last-tested-time", 0) + 3600000);
+var time = Math.max(0, GM_getValue("twl@pi-last-tested-time", 0) + 3600000 - Date.now());
 if (time) {
 	var num_of_digits = GM_getValue("twl@pi-num-of-digits", 3);
 	GAME.digits = 0;
