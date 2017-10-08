@@ -12,7 +12,7 @@
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://github.com/i3wgnit/Pi-Learning-Tool/raw/master/pi-learning.user.js
-// @version     2.2.2
+// @version     2.2.2+
 // ==/UserScript==
 var GAME = {};
 
@@ -164,6 +164,7 @@ GAME.vald = function() {
 };
 
 var time = Math.max(0, GM_getValue("twl@pi-last-tested-time", 0) + 3600000 - Date.now());
+console.log("Time left:", time);
 if (time) {
 	setTimeout( function() {window.location.reload()}, time);
 } else {
