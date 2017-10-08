@@ -12,7 +12,7 @@
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://github.com/i3wgnit/Pi-Learning-Tool/raw/master/pi-learning.user.js
-// @version     2.1
+// @version     2.2
 // ==/UserScript==
 var GAME = {};
 
@@ -34,14 +34,14 @@ GAME.fetch = function() {
 			url: "http://assets.piday.org/apps/million/fetch.php?page=" + (GAME.pi.length + 1),
 			onload: (response) => resolve(response.responseText),
 			onerror: (response) => reject(response.statusText)
-		})
+		});
 	});
-}
+};
 
 GAME.init = function() {
 	GAME.body = document.createElement( "div");
 	document.body.appendChild(GAME.body);
-	GAME.body.style = "z-index:2147483647;position:fixed;top:0px;left:0px;width:100%;height:100%;background-color:#fff;color:#000;text-align:left;vertical-align:middle;"
+	GAME.body.style = "z-index:2147483647;position:fixed;top:0px;left:0px;width:100%;height:100%;background-color:#fff;color:#000;text-align:left;vertical-align:middle;";
 
 	GAME.spn1 = document.createElement( "span" );
 	GAME.body.appendChild( GAME.spn1 );
@@ -82,14 +82,14 @@ GAME.chgTxt = function( num ) {
 	}
 
 	var len = GAME.txt.replace( /[.]/g, "" ).length,
-			max = Math.max(GAME.digits, num_of_digits)
+	    max = Math.max(GAME.digits, num_of_digits);
 
 	if ( GAME.digits ) {
 		if ( len > max ) {
 			GAME.txt = GAME.txt.slice( 0, max - len );
 		}
 	}
-	len = GAME.txt.replace( /[.]/g, "" ).length
+	len = GAME.txt.replace( /[.]/g, "" ).length;
 	GAME.div.innerHTML = GAME.txt.substring( Math.max( len - 3, 0 ) );
 	GAME.spn1.innerHTML = len;
 	GAME.inp.value = " ";
@@ -98,7 +98,7 @@ GAME.chgTxt = function( num ) {
 GAME.getPi = function( indx ) {
 	const w = parseInt( indx / 1000 ),
 		r = indx % 1000;
-	return GAME.pi[w][r]
+	return GAME.pi[w][r];
 }
 
 GAME.vald = function() {
@@ -163,9 +163,12 @@ GAME.vald = function() {
 	}
 };
 
-if (GM_getValue("twl@pi-last-tested-time", 0) + 3600000 < Date.now()){
+var time = Math.max(0, Date.now() - GM_getValue("twl@pi-last-tested-time", 0) + 3600000);
+if (time) {
 	var num_of_digits = GM_getValue("twl@pi-num-of-digits", 3);
 	GAME.digits = 0;
 	GAME.pi = GM_getValue("twl@pi-pi-digits", []);
 	GAME.fetchPi();
+} else {
+	setTimeout( function() {window.location.reload()}, time);
 }
