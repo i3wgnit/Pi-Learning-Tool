@@ -163,7 +163,7 @@ GAME.vald = function() {
 	}
 };
 
-var time = Math.max(0, GM_getValue("twl@pi-last-tested-time", 0) + 3600000 - Date.now());
+var time = Math.max(0, GM_getValue("twl@pi-last-tested-time", 0) + 36000000 - Date.now());
 if (time) {
 	setTimeout( function() {window.location.reload()}, time);
 } else {
