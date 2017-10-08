@@ -8,10 +8,11 @@
 // @include     https://*youtube.com/*
 // @include     http://*reddit.com/*
 // @include     https://*reddit.com/*
-// @version     2.0
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
+// @downloadURL https://github.com/i3wgnit/Pi-Learning-Tool/raw/master/pi-learning.user.js
+// @version     2.1
 // ==/UserScript==
 var GAME = {};
 
