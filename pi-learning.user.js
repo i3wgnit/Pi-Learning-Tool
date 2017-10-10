@@ -155,7 +155,7 @@ GAME.vald = function() {
 			return 0;
 		}
 		var output = "",
-				digit = GAME.getPi( GAME.digits );
+				digit = GAME.getPi( ++GAME.digits );
 		while ( GAME.getPi( GAME.digits ) == digit ){
 			 output += GAME.getPi( ++GAME.digits );
 		}
