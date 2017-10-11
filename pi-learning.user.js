@@ -12,7 +12,7 @@
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://github.com/i3wgnit/Pi-Learning-Tool/raw/master/pi-learning.user.js
-// @version     2.2.3
+// @version     2.2.3+
 // ==/UserScript==
 var GAME = {};
 
@@ -157,7 +157,7 @@ GAME.vald = function() {
 		var output = "",
 				digit = GAME.getPi( ++GAME.digits );
 		while ( GAME.getPi( GAME.digits ) == digit ){
-			 output += GAME.getPi( ++GAME.digits );
+			 output += GAME.getPi( GAME.digits++ );
 		}
 		GAME.div.innerHTML += "<br>Next digit: " + output;
 	}
