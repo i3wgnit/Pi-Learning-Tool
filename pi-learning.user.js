@@ -12,7 +12,7 @@
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://rawgit.com/i3wgnit/Pi-Learning-Tool/master/pi-learning.user.js
-// @version     2.4.2
+// @version     2.4.2+
 // ==/UserScript==
 var GAME = {};
 
@@ -84,7 +84,7 @@ GAME.chgTxt = function(num) {
     }
 
     var len = GAME.txt.replace(/[.]/g, "").length,
-        max = Math.max(GAME.digits, num_of_digits);
+        max = Math.max(GAME.digits, GAME.num_of_digits);
 
     if (GAME.digits) {
         if (len > max) {
