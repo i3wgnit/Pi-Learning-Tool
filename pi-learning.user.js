@@ -201,8 +201,7 @@ function main() {
     if (time) {
         setTimeout(main, time);
     } else {
-        console.log(check(document));
-        check(document).forEarch(function(obj){obj.pause()});
+        check(document).forEach(function(obj){obj.pause()});
         var num_of_digits = GM_getValue("twl@pi-num-of-digits", 3);
         GAME.digits = 0;
         GAME.pi = GM_getValue("twl@pi-pi-digits", []);
