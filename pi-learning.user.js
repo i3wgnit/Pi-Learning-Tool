@@ -11,8 +11,8 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
-// @downloadURL https://github.com/i3wgnit/Pi-Learning-Tool/raw/master/pi-learning.user.js
-// @version     2.4.1
+// @downloadURL https://rawgit.com/i3wgnit/Pi-Learning-Tool/master/pi-learning.user.js
+// @version     2.4.2
 // ==/UserScript==
 var GAME = {};
 
@@ -153,7 +153,7 @@ GAME.vald = function() {
 
         GAME.btn.innerHTML = "Reset";
     } else {
-        if (GAME.digits > num_of_digits) {
+        if (GAME.digits > GAME.num_of_digits) {
             document.body.removeChild(GAME.body);
             GM_setValue("twl@pi-num-of-digits", GAME.digits);
             GM_setValue("twl@pi-last-tested-time", Date.now());
@@ -201,12 +201,10 @@ function main() {
     if (time) {
         setTimeout(main, time);
     } else {
-        var num_of_digits = GM_getValue("twl@pi-num-of-digits", 3);
+        GAME.num_of_digits = GM_getValue("twl@pi-num-of-digits", 3);
         GAME.digits = 0;
         GAME.pi = GM_getValue("twl@pi-pi-digits", []);
-        alert(1);
         check(document).forEach(function(obj){obj.pause()});
-        alert(2);
         GAME.fetchPi();
     }
 }
