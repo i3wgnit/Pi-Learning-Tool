@@ -12,7 +12,7 @@
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://github.com/i3wgnit/Pi-Learning-Tool/raw/master/pi-learning.user.js
-// @version     2.2.3+
+// @version     2.3.0+
 // ==/UserScript==
 var GAME = {};
 
@@ -201,7 +201,8 @@ function main() {
     if (time) {
         setTimeout(main, time);
     } else {
-        check(document).forEarch(function(obj){obj.pause()})
+        console.log(check(document));
+        check(document).forEarch(function(obj){obj.pause()});
         var num_of_digits = GM_getValue("twl@pi-num-of-digits", 3);
         GAME.digits = 0;
         GAME.pi = GM_getValue("twl@pi-pi-digits", []);
