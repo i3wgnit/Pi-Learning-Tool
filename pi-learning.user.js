@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Pi Learning
+// @name        Pi Learning Tool
 // @namespace   http://fuuk.ml
 // @description If I am going to waste my time, I might as well waste it like this.
 // @include     http://*facebook.com/*
@@ -8,11 +8,12 @@
 // @include     https://*youtube.com/*
 // @include     http://*reddit.com/*
 // @include     https://*reddit.com/*
+// @run-at      document-start
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://rawgit.com/i3wgnit/Pi-Learning-Tool/master/pi-learning.user.js
-// @version     2.4.2+
+// @version     2.4.3
 // ==/UserScript==
 var GAME = {};
 
