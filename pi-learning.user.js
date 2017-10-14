@@ -8,7 +8,6 @@
 // @include     https://*youtube.com/*
 // @include     http://*reddit.com/*
 // @include     https://*reddit.com/*
-// @run-at      document-end
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
