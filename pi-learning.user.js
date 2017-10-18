@@ -1,13 +1,7 @@
 // ==UserScript==
 // @name        Pi Learning Tool
 // @namespace   http://fuuk.ml
-// @description If I am going to waste my time, I might as well waste it like this.
-// @include     http://*facebook.com/*
-// @include     https://*facebook.com/*
-// @include     http://*youtube.com/*
-// @include     https://*youtube.com/*
-// @include     http://*reddit.com/*
-// @include     https://*reddit.com/*
+// @description If I am going to waste my time, I might as well waste it like this. Set the sites by yourself :-)
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
@@ -153,7 +147,7 @@ GAME.vald = function() {
 
         GAME.btn.innerHTML = "Reset";
     } else {
-        if (GAME.digits > GAME.num_of_digits) {
+        if (parseInt(GAME.digits) > parseInt(GAME.num_of_digits)) {
             document.body.removeChild(GAME.body);
             GM_setValue("twl@pi-num-of-digits", GAME.digits);
             GM_setValue("twl@pi-last-tested-time", Date.now());
@@ -197,11 +191,11 @@ function check(context) {
 
 function main() {
     var time = Math.max(0, GM_getValue("twl@pi-last-tested-time", 0) + 3600000 - Date.now());
-    console.log("Time left:", time);
     if (time) {
         setTimeout(main, time);
     } else {
-        GAME.num_of_digits = GM_getValue("twl@pi-num-of-digits", 3);
+        GAME.num_of_digits = parseInt(GM_getValue("twl@pi-num-of-digits", 3));
+        console.log("Digits:", GAME.num_of_digits);
         GAME.digits = 0;
         GAME.pi = GM_getValue("twl@pi-pi-digits", []);
         check(document).forEach(function(obj){obj.pause()});
