@@ -6,7 +6,7 @@
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://rawgit.com/i3wgnit/Pi-Learning-Tool/master/pi-learning.user.js
-// @version     2.4.4
+// @version     2.5
 // ==/UserScript==
 var GAME = {};
 
