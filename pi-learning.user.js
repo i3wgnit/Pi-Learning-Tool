@@ -2,11 +2,12 @@
 // @name        Pi Learning Tool
 // @namespace   http://fuuk.ml
 // @description If I am going to waste my time, I might as well waste it like this. Set the sites by yourself :-)
+// @exclude     *
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
 // @downloadURL https://rawgit.com/i3wgnit/Pi-Learning-Tool/master/pi-learning.user.js
-// @version     2.5
+// @version     2.5.1
 // ==/UserScript==
 var GAME = {};
 
